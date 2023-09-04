@@ -1,0 +1,25 @@
+<main>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" fxLayout="column">
+        <mat-form-field>
+            <label for="id">ID:</label>
+            <input matInput type="number" id="id" formControlName="id">
+        </mat-form-field>
+
+        <mat-form-field>
+            <label for="name">Nombre</label>
+            <input matInput type="text" id="name" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <label for="email">Email:</label>
+            <input matInput type="email" id="email" formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field>
+            <label for="age">Edad:</label>
+            <input matInput type="number" id="age" formControlName="age">
+        </mat-form-field>
+
+        <button mat-raised-button type="submit">Crear</button>
+    </form>
+</main>

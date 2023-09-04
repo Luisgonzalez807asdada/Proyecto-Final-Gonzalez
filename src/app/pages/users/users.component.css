@@ -1,0 +1,9 @@
+main{
+    background-color: #A0C49D;
+    border: 2px solid black;
+    min-height: 82vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

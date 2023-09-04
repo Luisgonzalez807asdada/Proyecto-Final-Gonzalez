@@ -1,0 +1,30 @@
+<main>
+    <div>
+        <form [formGroup]="userModel" class="form">
+            <div>
+                <label for="email">Email:</label>
+                <input  matInput type="email" formControlName="email" id="email" required [ngClass]="{'invalid': userModel.get('email')?.invalid && (userModel.get('email')?.dirty || userModel.get('email')?.touched)}" >
+                <div
+                    *ngIf="userModel.get('email')?.invalid && (userModel.get('email')?.dirty || userModel.get('email')?.touched)">
+                    <div *ngIf="userModel.get('email')?.errors?.['required']">El email es obligatorio.</div>
+                    <div *ngIf="userModel.get('email')?.errors?.['email']">El email no tiene un formato válido.</div>
+                </div>
+            </div>
+
+            <div>
+                <label for="password">Password:</label>
+                <input matInput type="password" formControlName="password" id="password" [ngClass]="{'invalid': userModel.get('password')?.invalid && (userModel.get('password')?.dirty || userModel.get('password')?.touched)}">
+                <div
+                    *ngIf="userModel.get('password')?.invalid && (userModel.get('password')?.dirty || userModel.get('password')?.touched)">
+                    <div *ngIf="userModel.get('password')?.errors?.['required']">La contraseña es obligatoria.</div>
+                    <div *ngIf="userModel.get('password')?.errors?.['minlength']">La contraseña debe tener al menos 6
+                        caracteres.</div>
+                </div>
+            </div>
+
+            <button mat-button routerLink="users" type="button" (click)="submitForm()" [disabled]="userModel.invalid">
+                Ingresar
+            </button>
+        </form>
+    </div>
+</main>

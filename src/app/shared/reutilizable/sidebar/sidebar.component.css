@@ -1,0 +1,15 @@
+div {
+    height: 82vh;
+    background-color: #C4D7B2;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+ul{
+    list-style-type: none;
+    padding: 0; 
+    margin: 0;
+}
